@@ -24,7 +24,7 @@ const translations = {
     titlefour: '4. Количество работ',
     titlefive: '5. Преймущественные цвета',
     titlesix: `6. Ваши ссылки на логотипы ( прикладывать через imgur)`,
-  },
+  }
 }
 
 const ContactPage = () => {
@@ -36,7 +36,7 @@ const ContactPage = () => {
   }, [])
 
   const [selectedLanguage] = useRecoilState(languageState)
-  const t = translations[selectedLanguage] || translations.en // Fallback to English if language is not found
+  const t = translations[selectedLanguage] || translations.en
 
   return (
     <div>
@@ -45,7 +45,7 @@ const ContactPage = () => {
           data-aos="fade-down"
           className="container py-24 flex max-lg:flex-col max-lg:space-y-10 justify-between"
         >
-          <DesignOrderForm />
+          <DesignOrderForm t={t} />
         </div>
       </div>
     </div>
