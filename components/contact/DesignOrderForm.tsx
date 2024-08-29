@@ -209,18 +209,18 @@ const DesignOrderForm: React.FC = () => {
         <button
           type="button"
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          className="w-full p-2 border rounded text-left bg-[#222222] text-white border-none"
+          className="w-full p-2 border text-left bg-[#222222] text-white border-none"
         >
           {formData.designType || 'Выберите тип дизайна'}
         </button>
         {isDropdownOpen && (
-          <div className="dropdown-content absolute left-0 right-0 bg-[#222222] text-white border-none border rounded">
+          <div className="dropdown-content absolute left-0 right-0 bg-[#222222] text-white border-none border">
             {designTypes.map((type, index) => (
               <a
                 key={index}
                 href="#"
                 onClick={() => handleDesignTypeSelect(type)}
-                className="block p-2 hover:bg-gray-100"
+                className="block p-2 hover:bg-[#e32879]"
               >
                 {type}
               </a>
@@ -239,7 +239,7 @@ const DesignOrderForm: React.FC = () => {
           value={formData.customDesignType}
           onChange={handleInputChange}
           placeholder="Укажите свой вариант"
-          className="w-full p-2 border rounded mt-2 mb-4 bg-[#222222] text-white border-none"
+          className="w-full p-2 border mt-2 mb-4 bg-[#222222] text-white border-none"
         />
       )}
 
@@ -248,8 +248,8 @@ const DesignOrderForm: React.FC = () => {
         name="designText"
         value={formData.designText}
         onChange={handleInputChange}
-        placeholder="Если вы хотите вставить текст дизайна, введите его"
-        className="w-full p-2 border rounded mb-4 bg-[#222222] text-white border-none"
+        placeholder="Дополнительная информация или советы"
+        className="w-full p-2 border  mb-4 bg-[#222222] text-white border-none"
       />
       {errors.designText && (
         <p className="text-red-500 text-sm mt-1">{errors.designText}</p>
@@ -261,7 +261,7 @@ const DesignOrderForm: React.FC = () => {
         value={formData.color}
         onChange={handleInputChange}
         placeholder="Введите предпочтение цвета"
-        className="w-full p-2 border rounded mb-4 bg-[#222222] text-white border-none"
+        className="w-full p-2 border mb-4 bg-[#222222] text-white border-none"
       />
       {errors.color && (
         <p className="text-red-500 text-sm mt-1">{errors.color}</p>
@@ -273,7 +273,7 @@ const DesignOrderForm: React.FC = () => {
         value={formData.designElements}
         onChange={handleInputChange}
         placeholder="Элементы дизайна (например, машина или персонаж)"
-        className="w-full p-2 border rounded mb-4 bg-[#222222] text-white border-none"
+        className="w-full p-2 border mb-4 bg-[#222222] text-white border-none"
       />
       {errors.designElements && (
         <p className="text-red-500 text-sm mt-1">{errors.designElements}</p>
@@ -287,7 +287,7 @@ const DesignOrderForm: React.FC = () => {
           value={formData.width || ''}
           onChange={handleInputChange}
           placeholder="Ширину тома (px , sm , vh)"
-          className="w-1/2 p-2 border rounded mr-2 bg-[#222222] text-white border-none"
+          className="w-1/2 p-2 border mr-2 bg-[#222222] text-white border-none"
         />
         <input
           type="text"
@@ -295,7 +295,7 @@ const DesignOrderForm: React.FC = () => {
           value={formData.height || ''}
           onChange={handleInputChange}
           placeholder="Введите высоту (px , sm , vh)"
-          className="w-1/2 p-2 border rounded bg-[#222222] text-white border-none"
+          className="w-1/2 p-2 border bg-[#222222] text-white border-none"
         />
       </div>
       {errors.size && (
@@ -308,28 +308,27 @@ const DesignOrderForm: React.FC = () => {
         value={formData.fileSize}
         onChange={handleInputChange}
         placeholder="Введите размер файла (МБ, ГБ, ТБ)  (Если это необязательно, вам не нужно его заполнять.)"
-        className="w-full p-2 border rounded mb-4 bg-[#222222] text-white border-none"
+        className="w-full p-2 border mb-4 bg-[#222222] text-white border-none"
       />
 
       <textarea
         name="additionalInfo"
         value={formData.additionalInfo}
         onChange={handleInputChange}
-        placeholder="Дополнительная информация или советы"
-        className="w-full p-2 border rounded mb-4 bg-[#222222] text-white border-none"
+        placeholder="Дополнительная информация или советы (полнее)"
+        className="w-full p-2 border mb-4 bg-[#222222] text-white border-none"
         rows={4}
       />
       {errors.additionalInfo && (
         <p className="text-red-500 text-sm mt-1">{errors.additionalInfo}</p>
       )}
 
-      <input
-        type="text"
+    <input type="text"
         name="telegramUsername"
         value={formData.telegramUsername}
         onChange={handleInputChange}
         placeholder="Оставьте свой (username) для связи через Telegram"
-        className="w-full p-2 border rounded mb-4 bg-[#222222] text-white border-none"
+        className="w-full p-2 border mb-4 bg-[#222222] text-white border-none"
       />
       {errors.telegramUsername && (
         <p className="text-red-500 text-sm mt-1">{errors.telegramUsername}</p>
@@ -337,7 +336,7 @@ const DesignOrderForm: React.FC = () => {
 
       <button
         type="submit"
-        className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300 bg-[#E32879]"
+        className="w-full text-white py-2 px-4 hover:bg-[#E32879]-500 transition duration-300 bg-[#E32879]"
       >
         Отправить заказ
       </button>
